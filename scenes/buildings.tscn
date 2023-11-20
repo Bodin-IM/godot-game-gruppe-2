@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj10gigr8mwxb"]
+
+[ext_resource type="PackedScene" uid="uid://dr8b5l3bhx7hh" path="res://scenes/main_building.tscn" id="1_tiwti"]
+[ext_resource type="PackedScene" uid="uid://cl5bbklandckr" path="res://scenes/defense_tower.tscn" id="2_fm6is"]
+[ext_resource type="PackedScene" uid="uid://b21ma7iqq5eg5" path="res://scenes/ridder_krabber_hytte.tscn" id="3_amq64"]
+
+[node name="world_test_buildings" type="Node2D"]
+position = Vector2(-1, 0)
+
+[node name="main building" parent="." instance=ExtResource("1_tiwti")]
+position = Vector2(634, 336)
+
+[node name="defense buildings" type="Node2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="defense tower 1" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(501, 269)
+
+[node name="defense tower 2" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(500, 391)
+
+[node name="defense tower 3" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(495, 326)
+
+[node name="defense tower 4" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(561, 224)
+
+[node name="defense tower 5" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(635, 222)
+
+[node name="defense tower 6" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(692, 224)
+
+[node name="defense tower 7" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(741, 275)
+
+[node name="defense tower 8" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(741, 340)
+
+[node name="defense tower 9" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(741, 394)
+
+[node name="defense tower 10" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(687, 454)
+
+[node name="defense tower 11" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(622, 452)
+
+[node name="defense tower 12" parent="defense buildings" instance=ExtResource("2_fm6is")]
+position = Vector2(556, 449)
+
+[node name="ridder krabbe hytte" parent="." instance=ExtResource("3_amq64")]
+position = Vector2(563, 331)
