@@ -199,7 +199,6 @@ height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(32, 0)
-scale = Vector2(3, 3)
 script = ExtResource("1_fe1nv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -222,5 +221,10 @@ position = Vector2(0, -5.33333)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_p2r4v")
 disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 100.0
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var attack_area = $Area2D
 @onready var attack_shape = $Area2D/CollisionShape2D
