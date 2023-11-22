@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b21ma7iqq5eg5"]
-
-[ext_resource type="Texture2D" uid="uid://n444jhcnd1m0" path="res://assets/buildings/building_3.png" id="1_ljxtk"]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="ridder_krabbe_hytte" type="Sprite2D" parent="."]
-position = Vector2(4, -1)
-texture = ExtResource("1_ljxtk")

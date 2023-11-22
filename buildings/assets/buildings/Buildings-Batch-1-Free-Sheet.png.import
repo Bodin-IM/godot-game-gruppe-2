@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctootba5xnt72"
-path="res://.godot/imported/building_2.png-e286ae5e7a03054df8b4f8adff5fbae0.ctex"
+uid="uid://ddr1kvsjovgf4"
+path="res://.godot/imported/Buildings-Batch-1-Free-Sheet.png-4ba8bb8e3271327e174777bbac6b41ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buildings/building_2.png"
-dest_files=["res://.godot/imported/building_2.png-e286ae5e7a03054df8b4f8adff5fbae0.ctex"]
+source_file="res://buildings/assets/buildings/Buildings-Batch-1-Free-Sheet.png"
+dest_files=["res://.godot/imported/Buildings-Batch-1-Free-Sheet.png-4ba8bb8e3271327e174777bbac6b41ea.ctex"]
 
 [params]
 
