@@ -209,9 +209,7 @@ shape = SubResource("CapsuleShape2D_srrj8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-16, -21.3333)
 sprite_frames = SubResource("SpriteFrames_5mtcv")
-animation = &"attack"
-frame = 3
-frame_progress = 1.0
+animation = &"attack_up"
 centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
