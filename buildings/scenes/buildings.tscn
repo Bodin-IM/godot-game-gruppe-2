@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj10gigr8mwxb"]
+
+[ext_resource type="PackedScene" uid="uid://dr8b5l3bhx7hh" path="res://buildings/scenes/main_building.tscn" id="1_11iit"]
+[ext_resource type="PackedScene" uid="uid://cl5bbklandckr" path="res://buildings/scenes/defense_tower.tscn" id="2_2kwcy"]
+[ext_resource type="PackedScene" uid="uid://b21ma7iqq5eg5" path="res://buildings/scenes/ridder_krabber_hytte.tscn" id="3_jr6dd"]
+[ext_resource type="PackedScene" uid="uid://bfih6cwit377x" path="res://buildings/scenes/resource_storage_stone.tscn" id="4_1stco"]
+[ext_resource type="PackedScene" uid="uid://d3ng2q6c1qft0" path="res://buildings/scenes/resource_storage_wood.tscn" id="5_1qkft"]
+
+[node name="world_test_buildings" type="Node2D"]
+position = Vector2(-1, 0)
+
+[node name="main building" parent="." instance=ExtResource("1_11iit")]
+position = Vector2(644, 325)
+
+[node name="defense buildings" type="Node2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="defense tower 1" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(553, 274)
+
+[node name="defense tower 2" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(553, 373)
+
+[node name="defense tower 3" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(553, 324)
+
+[node name="defense tower 4" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(599, 225)
+
+[node name="defense tower 5" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(645, 225)
+
+[node name="defense tower 6" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(691, 225)
+
+[node name="defense tower 7" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(734, 274)
+
+[node name="defense tower 8" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(734, 323)
+
+[node name="defense tower 9" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(734, 373)
+
+[node name="defense tower 10" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(689, 422)
+
+[node name="defense tower 11" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(644, 422)
+
+[node name="defense tower 12" parent="defense buildings" instance=ExtResource("2_2kwcy")]
+position = Vector2(598, 422)
+
+[node name="ridder krabbe hytte" parent="." instance=ExtResource("3_jr6dd")]
+position = Vector2(598, 323)
+
+[node name="resource storage stone" parent="." instance=ExtResource("4_1stco")]
+position = Vector2(644, 276)
+
+[node name="resource storage wood" parent="." instance=ExtResource("5_1qkft")]
+position = Vector2(644, 374)
