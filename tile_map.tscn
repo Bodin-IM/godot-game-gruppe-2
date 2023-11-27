@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://boxydr3t4f68t"]
+[gd_scene load_steps=13 format=3 uid="uid://boxydr3t4f68t"]
 
 [ext_resource type="Texture2D" uid="uid://cc1yyylbyqa4a" path="res://assets/tilesets/grass.png" id="1_mof7d"]
 [ext_resource type="Texture2D" uid="uid://cormkml3nnqfs" path="res://assets/tilesets/plains.png" id="2_qsq3n"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dw0e0f7gdgv71" path="res://assets/tilesets/fences.png" id="4_hwj67"]
 [ext_resource type="PackedScene" uid="uid://dhdjm32hoc2hw" path="res://scenes/player.tscn" id="5_n13or"]
 [ext_resource type="PackedScene" uid="uid://dr8b5l3bhx7hh" path="res://buildings/scenes/main_building.tscn" id="6_cf2e6"]
+[ext_resource type="PackedScene" uid="uid://doui8uwon7xr7" path="res://resources/scenes/trees.tscn" id="7_x31so"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anwat"]
 resource_name = "Grass"
@@ -137,3 +138,6 @@ position = Vector2(40, 0)
 
 [node name="Node2D" parent="." instance=ExtResource("6_cf2e6")]
 position = Vector2(104, -32)
+
+[node name="trees" parent="." instance=ExtResource("7_x31so")]
+position = Vector2(-32, -16)
