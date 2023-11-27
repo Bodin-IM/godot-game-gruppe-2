@@ -1,15 +1,18 @@
 extends Area2D
 
-var tree_lives = 5
+var rng = RandomNumberGenerator.new()
+
+@onready var tree_lives = 5
+@onready var ressurser_tre = rng.randf_range(5, 10)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	pass
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
 	
 	
 func on_hit():
@@ -18,4 +21,6 @@ func on_hit():
 		dead_tree()
 	
 func dead_tree():
+	Resources.on_dead_tree(ressurser_tre)
 	queue_free()
+	
