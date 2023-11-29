@@ -2,6 +2,8 @@ extends Area2D
 
 var rng = RandomNumberGenerator.new()
 
+@onready var animations = $AnimationPlayer
+
 @onready var tree_lives = 5
 @onready var ressurser_tre = rng.randf_range(5, 10)
 
@@ -17,6 +19,7 @@ func _process(delta):
 	
 func on_hit():
 	tree_lives -= 1
+	animations.play("tree_animation")
 	if (tree_lives < 1):
 		dead_tree()
 	

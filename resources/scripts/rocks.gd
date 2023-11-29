@@ -2,8 +2,8 @@ extends Area2D
 
 var rng = RandomNumberGenerator.new()
 
-@onready var rock_lives = 5
-@onready var ressurser_stein = rng.randf_range(5, 10)
+@onready var rock_lives = 3
+@onready var ressurser_stein = rng.randf_range(3, 7)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,9 +17,10 @@ func _process(delta):
 func on_hit():
 	rock_lives -= 1
 	if (rock_lives < 1):
-		dead_tree()
+		dead_rock()
 	
-func dead_tree():
+func dead_rock():
 	Resources.on_dead_rock(ressurser_stein)
 	queue_free()
 	
+
