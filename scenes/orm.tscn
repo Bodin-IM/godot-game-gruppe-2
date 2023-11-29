@@ -1,0 +1,168 @@
+[gd_scene load_steps=20 format=3 uid="uid://c01jn38ldum2i"]
+
+[ext_resource type="Texture2D" uid="uid://st1hjexvmaey" path="res://assets/characters/orm.png" id="1_g3kja"]
+[ext_resource type="Script" path="res://script/orm.gd" id="1_v5t7j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvofa"]
+radius = 4.0
+height = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0at5"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lolq"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxeol"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfas0"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgh8g"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q08ve"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ysch"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg3fo"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7va4"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mconn"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu281"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jwti"]
+atlas = ExtResource("1_g3kja")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rf17g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0at5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lolq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxeol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfas0")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgh8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q08ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ysch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg3fo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7va4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mconn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu281")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jwti")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hy88r"]
+radius = 68.0
+height = 136.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6xg7q"]
+radius = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tlb1c"]
+radius = 8.0
+height = 16.0
+
+[node name="orm" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_v5t7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gvofa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rf17g")
+animation = &"walk"
+
+[node name="VisionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
+modulate = Color(1, 1, 1, 0.337255)
+shape = SubResource("CapsuleShape2D_hy88r")
+
+[node name="AttackCheckArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackCheckArea"]
+modulate = Color(1, 1, 1, 0.419608)
+position = Vector2(11, 0)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_6xg7q")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_tlb1c")
+disabled = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

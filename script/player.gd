@@ -3,8 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 @onready var animated_sprite_2d = $AnimatedSprite2D
-@onready var attack_area = $Area2D
-@onready var attack_shape = $Area2D/CollisionShape2D
+@onready var attack_area = $AttackArea
+@onready var attack_shape = $AttackArea/CollisionShape2D
 
 var is_attacking = false
 var moving_vertical = false
@@ -97,10 +97,9 @@ func _on_animated_sprite_2d_animation_finished():
 	is_attacking = false
 
 
-func _on_area_2d_area_entered(area):
+func _on_attack_area_area_entered(area):
 	if area.is_in_group("ressurs_object"):
 		print("traff ressurs object")
 		area.on_hit()
 	if area.is_in_group("enemy_group"):
 		print("traff orm")
-	

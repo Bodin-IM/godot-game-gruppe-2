@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy6gheg0qga48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd6e3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nd46d"]
+
+[node name="test_target" type="Area2D" groups=["buildings_group"]]
+z_index = -1
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kd6e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+modulate = Color(0.858824, 0.709804, 0.482353, 1)
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_nd46d")
