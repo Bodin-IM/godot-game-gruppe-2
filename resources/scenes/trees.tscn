@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://doui8uwon7xr7"]
+[gd_scene load_steps=9 format=3 uid="uid://doui8uwon7xr7"]
 
 [ext_resource type="Script" path="res://resources/scripts/trees.gd" id="1_7ghhv"]
 [ext_resource type="Texture2D" uid="uid://1p7ubn7i1jol" path="res://assets/objects/tree.png" id="2_qd3wh"]
+[ext_resource type="Texture2D" uid="uid://bpep0w12pbskv" path="res://assets/objects/dead_tree.png" id="3_olyo0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e7uib"]
 radius = 9.0
 height = 28.0
+
+[sub_resource type="Animation" id="Animation_qpc55"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_xa3d8"]
 resource_name = "tree_animation"
@@ -23,16 +27,25 @@ tracks/0/keys = {
 "values": [Vector2(18, -23), Vector2(19, -23), Vector2(18, -23), Vector2(17, -23), Vector2(18, -23)]
 }
 
-[sub_resource type="Animation" id="Animation_qpc55"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lntbg"]
 _data = {
 "RESET": SubResource("Animation_qpc55"),
 "tree_animation": SubResource("Animation_xa3d8")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_twodv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_olyo0")
+}],
+"loop": true,
+"name": &"dead_tree_animation",
+"speed": 5.0
+}]
+
 [node name="trees" type="Area2D" groups=["ressurs_object"]]
+position = Vector2(1, 48)
 script = ExtResource("1_7ghhv")
 
 [node name="Tree" type="Sprite2D" parent="."]
@@ -49,3 +62,10 @@ speed_scale = 1.8
 libraries = {
 "": SubResource("AnimationLibrary_lntbg")
 }
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(18.5, -10.4683)
+scale = Vector2(0.75, 0.753174)
+sprite_frames = SubResource("SpriteFrames_twodv")
+animation = &"new_animation"

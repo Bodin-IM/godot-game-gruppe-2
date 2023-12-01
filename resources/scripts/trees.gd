@@ -3,7 +3,7 @@ extends Area2D
 var rng = RandomNumberGenerator.new()
 
 @onready var animations = $AnimationPlayer
-
+@onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var tree_lives = 5
 @onready var ressurser_tre = rng.randf_range(5, 10)
 
@@ -26,4 +26,6 @@ func on_hit():
 func dead_tree():
 	Resources.on_dead_tree(ressurser_tre)
 	queue_free()
+	animated_sprite_2d.play("dead_tree_animation")
+	
 	
