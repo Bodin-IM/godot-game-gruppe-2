@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://88v41snjvylc"]
+[gd_scene load_steps=13 format=3 uid="uid://88v41snjvylc"]
 
 [ext_resource type="Texture2D" uid="uid://cc1yyylbyqa4a" path="res://assets/tilesets/grass.png" id="1_mof7d"]
 [ext_resource type="Texture2D" uid="uid://cormkml3nnqfs" path="res://assets/tilesets/plains.png" id="2_qsq3n"]
 [ext_resource type="Texture2D" uid="uid://d2qdbit2xtn6p" path="res://assets/tilesets/decor_16x16.png" id="3_c3dgt"]
 [ext_resource type="Texture2D" uid="uid://dw0e0f7gdgv71" path="res://assets/tilesets/fences.png" id="4_hwj67"]
 [ext_resource type="PackedScene" uid="uid://dhdjm32hoc2hw" path="res://scenes/player.tscn" id="5_kudt1"]
+[ext_resource type="PackedScene" uid="uid://doui8uwon7xr7" path="res://resources/scenes/trees.tscn" id="6_8kn68"]
 [ext_resource type="PackedScene" uid="uid://cprlovjeanhk7" path="res://resources/scenes/rocks.tscn" id="6_hxskg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anwat"]
@@ -143,3 +144,9 @@ position = Vector2(264, 102)
 
 [node name="rocks3" parent="." instance=ExtResource("6_hxskg")]
 position = Vector2(273, 201)
+
+[node name="trees" parent="." instance=ExtResource("6_8kn68")]
+position = Vector2(180, 63)
+
+[node name="trees2" parent="." instance=ExtResource("6_8kn68")]
+position = Vector2(16, 211)

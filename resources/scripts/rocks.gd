@@ -14,8 +14,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (rock_lives == 5):
-		animated_sprite_2d.play("rock")
+	#if (rock_lives == 5):
+	pass
 
 func on_hit():
 	print("hit")
@@ -23,8 +23,12 @@ func on_hit():
 	if (rock_lives > 0):
 		rock_lives -= 1
 		current_frame += 1
+		update_animation()
 	elif (rock_lives < 1):
 		dead_rock()
+		
+func update_animation():
+	animated_sprite_2d.frame = current_frame
 	
 func dead_rock():
 	Resources.on_dead_rock(ressurser_stein)

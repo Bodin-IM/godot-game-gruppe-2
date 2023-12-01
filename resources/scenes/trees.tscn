@@ -49,7 +49,7 @@ position = Vector2(1, 48)
 script = ExtResource("1_7ghhv")
 
 [node name="Tree" type="Sprite2D" parent="."]
-position = Vector2(18, -23)
+position = Vector2(19, -23)
 scale = Vector2(0.776596, 0.738095)
 texture = ExtResource("2_qd3wh")
 

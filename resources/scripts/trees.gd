@@ -15,6 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+		
 	
 	
 func on_hit():
@@ -26,6 +27,6 @@ func on_hit():
 func dead_tree():
 	Resources.on_dead_tree(ressurser_tre)
 	queue_free()
-	animated_sprite_2d.play("dead_tree_animation")
+	
 	
 	
