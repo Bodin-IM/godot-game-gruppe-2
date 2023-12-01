@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 100.0
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var attack_area = $Area2D
 @onready var attack_shape = $Area2D/CollisionShape2D
@@ -31,7 +31,6 @@ func _physics_process(delta):
 
 
 func apply_movement(delta, direction):
-	# Get the input direction and handle the movement/deceleration.
 	if direction.x:
 		velocity.x = direction.x * SPEED
 	else:
@@ -44,23 +43,22 @@ func apply_movement(delta, direction):
 
 func handle_attack(direction):
 	if is_attacking:
-		if animated_sprite_2d.flip_h:
-			attack_area.position.x = -10.667
-			attack_area.position.y = 0
-		elif not moving_vertical:
-			attack_area.position.x = 10.667
-			attack_area.position.y = 0
+		# finner retningen man attacker
+		if not moving_vertical:
+			if animated_sprite_2d.flip_h:
+				attack_area.position.x = -10.667
+				attack_area.position.y = 0
+			else:
+				attack_area.position.x = 10.667
+				attack_area.position.y = 0
 		elif vertical_direction:
 			attack_area.position.y = -6
 			attack_area.position.x = 0
 		else:
 			attack_area.position.y = 6
 			attack_area.position.x = 0
-			
-			
 		attack_shape.disabled = false
-		
-	else:
+	else: # deaktiverer attack areaen
 		attack_area.position.x = 0
 		attack_area.position.y = 0
 		attack_shape.disabled = true
@@ -77,14 +75,18 @@ func update_animation(direction, is_attacking):
 		else:
 			animated_sprite_2d.play("attack_down")
 	else:
-		if direction:
+		if direction.x:
 			animated_sprite_2d.play("walk")
 			animated_sprite_2d.flip_h = (direction.x < 0)
-			moving_vertical = (direction.y != 0)
+			moving_vertical = (direction.y != 0) # brukes for attack retning
 			vertical_direction = (direction.y < 0)
-		elif Input.is_action_pressed("block"):
-			animated_sprite_2d.play("block?")
 			
+		elif direction.y:
+			animated_sprite_2d.play("walk_up")
+			if direction.y > 0:
+				animated_sprite_2d.play_backwards("walk_up")
+			moving_vertical = (direction.y != 0) # brukes for attack retning
+			vertical_direction = (direction.y < 0)
 			
 		else:
 			animated_sprite_2d.play("idle")
@@ -93,3 +95,12 @@ func update_animation(direction, is_attacking):
 
 func _on_animated_sprite_2d_animation_finished():
 	is_attacking = false
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("ressurs_object"):
+		print("traff ressurs object")
+		area.on_hit()
+	if area.is_in_group("enemy_group"):
+		print("traff orm")
+	
