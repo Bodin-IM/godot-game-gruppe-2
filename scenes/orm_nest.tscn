@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5177ogry76xu"]
+
+[ext_resource type="Texture2D" uid="uid://ba4n306cba464" path="res://assets/objects/orm_nest.png" id="1_dpd1s"]
+[ext_resource type="Script" path="res://script/orm_nest.gd" id="1_fgi15"]
+
+[node name="OrmNest" type="Node2D"]
+script = ExtResource("1_fgi15")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_dpd1s")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+one_shot = true

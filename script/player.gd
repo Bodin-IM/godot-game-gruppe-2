@@ -101,5 +101,9 @@ func _on_attack_area_area_entered(area):
 	if area.is_in_group("ressurs_object"):
 		print("traff ressurs object")
 		area.on_hit()
-	if area.is_in_group("enemy_group"):
+
+func _on_attack_area_body_entered(body):
+	if body.is_in_group("enemy_group"):
 		print("traff orm")
+		body.on_hit()
+

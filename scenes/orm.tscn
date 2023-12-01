@@ -119,13 +119,13 @@ radius = 68.0
 height = 136.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6xg7q"]
-radius = 8.0
+radius = 7.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tlb1c"]
 radius = 8.0
 height = 16.0
 
-[node name="orm" type="CharacterBody2D"]
+[node name="orm" type="CharacterBody2D" groups=["enemy_group"]]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_v5t7j")
@@ -136,7 +136,9 @@ shape = SubResource("CapsuleShape2D_gvofa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rf17g")
-animation = &"walk"
+animation = &"attack"
+frame = 3
+frame_progress = 1.0
 
 [node name="VisionArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -147,22 +149,29 @@ modulate = Color(1, 1, 1, 0.337255)
 shape = SubResource("CapsuleShape2D_hy88r")
 
 [node name="AttackCheckArea" type="Area2D" parent="."]
+position = Vector2(-5, 0)
 collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackCheckArea"]
 modulate = Color(1, 1, 1, 0.419608)
-position = Vector2(11, 0)
+position = Vector2(12, 0)
 rotation = 1.5708
 shape = SubResource("CircleShape2D_6xg7q")
 
 [node name="AttackArea" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 9
+position = Vector2(11, 0)
+collision_layer = 0
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_tlb1c")
 disabled = true
 
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]
