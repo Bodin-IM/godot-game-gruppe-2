@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://doui8uwon7xr7"]
+[gd_scene load_steps=10 format=3 uid="uid://doui8uwon7xr7"]
 
 [ext_resource type="Script" path="res://resources/scripts/trees.gd" id="1_7ghhv"]
 [ext_resource type="Texture2D" uid="uid://1p7ubn7i1jol" path="res://assets/objects/tree.png" id="2_qd3wh"]
@@ -27,9 +27,13 @@ tracks/0/keys = {
 "values": [Vector2(18, -23), Vector2(19, -23), Vector2(18, -23), Vector2(17, -23), Vector2(18, -23)]
 }
 
+[sub_resource type="Animation" id="Animation_vm0qj"]
+resource_name = "new_animation"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lntbg"]
 _data = {
 "RESET": SubResource("Animation_qpc55"),
+"new_animation": SubResource("Animation_vm0qj"),
 "tree_animation": SubResource("Animation_xa3d8")
 }
 
@@ -63,9 +67,10 @@ libraries = {
 "": SubResource("AnimationLibrary_lntbg")
 }
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Stubbe" type="AnimatedSprite2D" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2(18.5, -10.4683)
 scale = Vector2(0.75, 0.753174)
 sprite_frames = SubResource("SpriteFrames_twodv")
-animation = &"new_animation"
+animation = &"dead_tree_animation"

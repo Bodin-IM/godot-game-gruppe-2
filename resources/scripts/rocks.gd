@@ -3,8 +3,8 @@ extends Area2D
 var rng = RandomNumberGenerator.new()
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
-@onready var rock_lives = 5
-@onready var ressurser_stein = rng.randf_range(5, 10)
+@onready var rock_lives = 4
+@onready var ressurser_stein = rng.randi_range(5, 10)
 var current_frame = 0
 
 
@@ -31,5 +31,6 @@ func update_animation():
 	animated_sprite_2d.frame = current_frame
 	
 func dead_rock():
-	Resources.on_dead_rock(ressurser_stein)
-	animated_sprite_2d.frame=5
+	if (animated_sprite_2d.frame < 5):
+		Resources.on_dead_rock(ressurser_stein)
+		animated_sprite_2d.frame=5

@@ -38,10 +38,12 @@ animations = [{
 script = ExtResource("1_nn6wy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(16, 0, 24, -8, 24, -16, 16, -24, 8, -24, 0, -16, 0, -8, 8, 0)
+position = Vector2(-0.58125, 0.525)
+scale = Vector2(0.886029, 0.890625)
+polygon = PackedVector2Array(16, 0, 17, -7, 16, -12, 12, -15, 7, -16, 3, -12, 0, -8, 2, -3, 8, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(12, -12)
-scale = Vector2(1.5, 1.5)
+position = Vector2(7.5, -7)
+scale = Vector2(0.9375, 0.875)
 sprite_frames = SubResource("SpriteFrames_5pmuy")
 animation = &"new_animation"

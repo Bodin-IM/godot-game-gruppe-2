@@ -150,3 +150,21 @@ position = Vector2(180, 63)
 
 [node name="trees2" parent="." instance=ExtResource("6_8kn68")]
 position = Vector2(16, 211)
+
+[node name="trees4" parent="." instance=ExtResource("6_8kn68")]
+position = Vector2(144, 28)
+
+[node name="trees3" parent="." instance=ExtResource("6_8kn68")]
+position = Vector2(319, 97)
+
+[node name="rocks4" parent="." instance=ExtResource("6_hxskg")]
+position = Vector2(238, 106)
+
+[node name="rocks5" parent="." instance=ExtResource("6_hxskg")]
+position = Vector2(66, 22)
+
+[node name="rocks6" parent="." instance=ExtResource("6_hxskg")]
+position = Vector2(11, 117)
+
+[node name="trees5" parent="." instance=ExtResource("6_8kn68")]
+position = Vector2(167, 228)
