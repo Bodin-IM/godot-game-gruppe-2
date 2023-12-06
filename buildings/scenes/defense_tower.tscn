@@ -9,7 +9,9 @@ size = Vector2(45, 49)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ww21i")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["build_group"]]
+collision_layer = 32
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_qcvv5")

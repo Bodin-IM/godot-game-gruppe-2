@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://tc5itcvnha2"]
+
+[ext_resource type="PackedScene" uid="uid://dhdjm32hoc2hw" path="res://scenes/player.tscn" id="1_h1moy"]
+[ext_resource type="Script" path="res://script/pre_world.gd" id="1_lfbpn"]
+[ext_resource type="PackedScene" uid="uid://c01jn38ldum2i" path="res://scenes/orm.tscn" id="2_u22so"]
+[ext_resource type="PackedScene" uid="uid://dy6gheg0qga48" path="res://scenes/test_target.tscn" id="3_4o3be"]
+[ext_resource type="PackedScene" uid="uid://dr8b5l3bhx7hh" path="res://buildings/scenes/main_building.tscn" id="4_tens8"]
+[ext_resource type="PackedScene" uid="uid://cl5bbklandckr" path="res://buildings/scenes/defense_tower.tscn" id="5_2aj0w"]
+[ext_resource type="PackedScene" uid="uid://d3ng2q6c1qft0" path="res://buildings/scenes/resource_storage_wood.tscn" id="6_eijj7"]
+[ext_resource type="PackedScene" uid="uid://c5177ogry76xu" path="res://scenes/orm_nest.tscn" id="7_762ui"]
+
+[node name="preWorld" type="Node2D"]
+script = ExtResource("1_lfbpn")
+
+[node name="Player" parent="." instance=ExtResource("1_h1moy")]
+position = Vector2(537, 405)
+
+[node name="orm" parent="." instance=ExtResource("2_u22so")]
+position = Vector2(479, 433)
+
+[node name="test_target" parent="." instance=ExtResource("3_4o3be")]
+position = Vector2(299, 391)
+
+[node name="Node2D" parent="." instance=ExtResource("4_tens8")]
+position = Vector2(490, 215)
+
+[node name="Node2D2" parent="." instance=ExtResource("5_2aj0w")]
+position = Vector2(440, 279)
+
+[node name="Node2D3" parent="." instance=ExtResource("6_eijj7")]
+position = Vector2(555, 293)
+
+[node name="orm2" parent="." instance=ExtResource("2_u22so")]
+position = Vector2(479, 433)
+
+[node name="OrmNest" parent="." instance=ExtResource("7_762ui")]
+position = Vector2(540, 463)
