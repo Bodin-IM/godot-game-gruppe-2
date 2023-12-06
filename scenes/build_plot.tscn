@@ -18,5 +18,46 @@ shape = SubResource("RectangleShape2D_f8ytc")
 scale = Vector2(3, 3)
 texture = ExtResource("1_tlm6v")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -48.0
+offset_top = -56.0
+offset_right = 432.0
+offset_bottom = 104.0
+scale = Vector2(0.2, 0.2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 160.0
+text = "Bygg 1
+"
+
+[node name="Button2" type="Button" parent="Control"]
+offset_left = 120.0
+offset_right = 240.0
+offset_bottom = 160.0
+text = "Bygg 2
+"
+
+[node name="Button3" type="Button" parent="Control"]
+offset_left = 240.0
+offset_right = 360.0
+offset_bottom = 160.0
+text = "Bygg 3"
+
+[node name="Button4" type="Button" parent="Control"]
+offset_left = 360.0
+offset_right = 480.0
+offset_bottom = 160.0
+text = "Bygg 4"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/Button4" to="." method="_on_button_4_pressed"]
