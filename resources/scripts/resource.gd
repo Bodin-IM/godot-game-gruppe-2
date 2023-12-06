@@ -14,6 +14,7 @@ func _process(delta):
 	
 func on_dead_tree(amount):
 	tre_ressurser += amount
-	
+	print("treressurser =", tre_ressurser)
 func on_dead_rock(amount):
 	stein_ressurser += amount
+	print("steinressurser =", stein_ressurser)
