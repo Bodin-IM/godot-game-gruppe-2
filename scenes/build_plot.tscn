@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://buamfhyau3dr2"]
+
+[ext_resource type="Script" path="res://script/build_plot.gd" id="1_04nm3"]
+[ext_resource type="Texture2D" uid="uid://hig8gxjynqln" path="res://assets/objects/rock_in_water_01.png" id="1_tlm6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8ytc"]
+size = Vector2(48, 48.5862)
+
+[node name="BuildPlot" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_04nm3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f8ytc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_tlm6v")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -48.0
+offset_top = -56.0
+offset_right = 432.0
+offset_bottom = 104.0
+scale = Vector2(0.2, 0.2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 20
+text = "Defense 
+Tower"
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 240.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 20
+text = "Knight 
+Crab"
+
+[node name="Button3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 240.0
+offset_right = 360.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 20
+text = "Wood 
+Storage"
+
+[node name="Button4" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 360.0
+offset_right = 480.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 20
+text = "Stone
+Storage"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/Button4" to="." method="_on_button_4_pressed"]
