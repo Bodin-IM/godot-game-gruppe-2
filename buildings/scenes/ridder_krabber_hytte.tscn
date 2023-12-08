@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b21ma7iqq5eg5"]
+[gd_scene load_steps=5 format=3 uid="uid://b21ma7iqq5eg5"]
 
 [ext_resource type="Texture2D" uid="uid://n444jhcnd1m0" path="res://buildings/assets/buildings/building_3.png" id="1_u2nv1"]
 [ext_resource type="Script" path="res://buildings/scripts/ridder_krabber_hytte.gd" id="1_ycdat"]
+[ext_resource type="Script" path="res://buildings/scripts/Global_buildings.gd" id="2_u60hd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvxd7"]
 size = Vector2(43, 43)
@@ -12,6 +13,7 @@ script = ExtResource("1_ycdat")
 [node name="Area2D" type="Area2D" parent="." groups=["build_group"]]
 collision_layer = 32
 collision_mask = 0
+script = ExtResource("2_u60hd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_qvxd7")
