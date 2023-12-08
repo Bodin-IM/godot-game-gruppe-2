@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cc5jthfjdijhu" path="res://assets/characters/new_crab.png" id="2_t4uo2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_srrj8"]
-radius = 5.33333
-height = 21.3333
+radius = 4.0
+height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fs1dc"]
 atlas = ExtResource("2_t4uo2")
@@ -198,8 +198,10 @@ radius = 8.0
 height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 position = Vector2(32, 0)
 collision_layer = 2
+collision_mask = 33
 script = ExtResource("1_fe1nv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -213,11 +215,11 @@ sprite_frames = SubResource("SpriteFrames_5mtcv")
 animation = &"attack"
 centered = false
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(0, -5.33333)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_p2r4v")
@@ -229,4 +231,6 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]
+[connection signal="area_entered" from="AttackArea" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
