@@ -96,6 +96,7 @@ func _on_animated_sprite_2d_animation_finished():
 func _on_attack_area_area_entered(area):
 	if area.is_in_group("build_group"):
 		print("build attacked!")
+		area.on_hit()
 
 
 

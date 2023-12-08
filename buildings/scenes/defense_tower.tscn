@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl5bbklandckr"]
+[gd_scene load_steps=5 format=3 uid="uid://cl5bbklandckr"]
 
 [ext_resource type="Texture2D" uid="uid://bcvf7xea4whcc" path="res://buildings/assets/buildings/building_6.png" id="1_po13l"]
 [ext_resource type="Script" path="res://buildings/scripts/defense_tower.gd" id="1_ww21i"]
+[ext_resource type="Script" path="res://buildings/scripts/Global_buildings.gd" id="2_b5pqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcvv5"]
 size = Vector2(45, 49)
@@ -12,6 +13,7 @@ script = ExtResource("1_ww21i")
 [node name="Area2D" type="Area2D" parent="." groups=["build_group"]]
 collision_layer = 32
 collision_mask = 0
+script = ExtResource("2_b5pqy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_qcvv5")
