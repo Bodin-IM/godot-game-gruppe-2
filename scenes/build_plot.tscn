@@ -19,6 +19,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_tlm6v")
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -48.0
@@ -33,27 +34,36 @@ size_flags_vertical = 4
 layout_mode = 0
 offset_right = 120.0
 offset_bottom = 160.0
-text = "Bygg 1
-"
+theme_override_font_sizes/font_size = 20
+text = "Defense 
+Tower"
 
 [node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 120.0
 offset_right = 240.0
 offset_bottom = 160.0
-text = "Bygg 2
-"
+theme_override_font_sizes/font_size = 20
+text = "Knight 
+Crab"
 
 [node name="Button3" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 240.0
 offset_right = 360.0
 offset_bottom = 160.0
-text = "Bygg 3"
+theme_override_font_sizes/font_size = 20
+text = "Wood 
+Storage"
 
 [node name="Button4" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 360.0
 offset_right = 480.0
 offset_bottom = 160.0
-text = "Bygg 4"
+theme_override_font_sizes/font_size = 20
+text = "Stone
+Storage"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
