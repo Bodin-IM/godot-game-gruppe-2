@@ -11,6 +11,9 @@ height = 28.0
 [sub_resource type="Animation" id="Animation_qpc55"]
 length = 0.001
 
+[sub_resource type="Animation" id="Animation_vm0qj"]
+resource_name = "new_animation"
+
 [sub_resource type="Animation" id="Animation_xa3d8"]
 resource_name = "tree_animation"
 length = 0.4
@@ -26,9 +29,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(18, -23), Vector2(19, -23), Vector2(18, -23), Vector2(17, -23), Vector2(18, -23)]
 }
-
-[sub_resource type="Animation" id="Animation_vm0qj"]
-resource_name = "new_animation"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lntbg"]
 _data = {
@@ -48,7 +48,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="trees" type="Area2D" groups=["ressurs_object"]]
+[node name="trees" type="Area2D" groups=["ressurs_object", "tree_group"]]
 position = Vector2(1, 48)
 script = ExtResource("1_7ghhv")
 
