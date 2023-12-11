@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsst0jpce16q1"]
+
+[ext_resource type="Texture2D" uid="uid://dbe3rfai078mq" path="res://defense/assets/fence.png" id="1_8pimp"]
+[ext_resource type="Script" path="res://defense/scripts/walls.gd" id="1_qytcj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksubd"]
+size = Vector2(80, 30)
+
+[node name="wall_left_right" type="Node2D" groups=["build_group"]]
+script = ExtResource("1_qytcj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ksubd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_8pimp")
