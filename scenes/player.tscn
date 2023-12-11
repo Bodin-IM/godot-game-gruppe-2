@@ -259,7 +259,7 @@ shape = SubResource("CapsuleShape2D_p2r4v")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 

@@ -18,7 +18,7 @@ var hp = 10
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# fargen trenger ikke være tilfeldig, jeg gjorde bare dette for gøy
-	animated_sprite_2d.modulate =Color(randi_range(0, 100) * 0.01, randi_range(0, 100) * 0.01, randi_range(0, 100) * 0.01)
+	animated_sprite_2d.modulate =Color(randi_range(0, 100) * 0.01, randi_range(0, 100) * 0.01, 1)
 
 func _physics_process(delta):
 	find_target(delta)
