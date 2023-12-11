@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://doui8uwon7xr7"]
+[gd_scene load_steps=10 format=3 uid="uid://dihccwaslfq3u"]
 
-[ext_resource type="Script" path="res://resources/scripts/trees.gd" id="1_7ghhv"]
-[ext_resource type="Texture2D" uid="uid://1p7ubn7i1jol" path="res://assets/objects/tree.png" id="2_qd3wh"]
-[ext_resource type="Texture2D" uid="uid://bpep0w12pbskv" path="res://assets/objects/dead_tree.png" id="3_olyo0"]
+[ext_resource type="Script" path="res://resources/scripts/trees.gd" id="1_aafd5"]
+[ext_resource type="Texture2D" uid="uid://1p7ubn7i1jol" path="res://assets/objects/tree.png" id="2_apyea"]
+[ext_resource type="Texture2D" uid="uid://bpep0w12pbskv" path="res://assets/objects/dead_tree.png" id="3_sym80"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e7uib"]
 radius = 9.0
@@ -41,7 +41,7 @@ _data = {
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_olyo0")
+"texture": ExtResource("3_sym80")
 }],
 "loop": true,
 "name": &"dead_tree_animation",
@@ -50,12 +50,12 @@ animations = [{
 
 [node name="trees" type="Area2D" groups=["ressurs_object"]]
 position = Vector2(1, 48)
-script = ExtResource("1_7ghhv")
+script = ExtResource("1_aafd5")
 
 [node name="Tree" type="Sprite2D" parent="."]
 position = Vector2(19, -23)
 scale = Vector2(0.776596, 0.738095)
-texture = ExtResource("2_qd3wh")
+texture = ExtResource("2_apyea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(18, -17)
