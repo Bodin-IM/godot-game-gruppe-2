@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://tc5itcvnha2"]
+[gd_scene load_steps=11 format=3 uid="uid://tc5itcvnha2"]
 
 [ext_resource type="PackedScene" uid="uid://dhdjm32hoc2hw" path="res://scenes/player.tscn" id="1_h1moy"]
 [ext_resource type="Script" path="res://script/pre_world.gd" id="1_lfbpn"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cl5bbklandckr" path="res://buildings/scenes/defense_tower.tscn" id="5_2aj0w"]
 [ext_resource type="PackedScene" uid="uid://d3ng2q6c1qft0" path="res://buildings/scenes/resource_storage_wood.tscn" id="6_eijj7"]
 [ext_resource type="PackedScene" path="res://scenes/orm_nest.tscn" id="7_762ui"]
+[ext_resource type="PackedScene" uid="uid://dihccwaslfq3u" path="res://resources/scenes/trees.tscn" id="9_lenhy"]
+[ext_resource type="PackedScene" uid="uid://d07ty61bshb4w" path="res://resources/scenes/rocks.tscn" id="10_1jqv7"]
 
 [node name="preWorld" type="Node2D"]
 script = ExtResource("1_lfbpn")
@@ -35,3 +37,15 @@ position = Vector2(479, 433)
 
 [node name="OrmNest" parent="." instance=ExtResource("7_762ui")]
 position = Vector2(540, 463)
+
+[node name="trees" parent="." instance=ExtResource("9_lenhy")]
+position = Vector2(590, 420)
+
+[node name="trees2" parent="." instance=ExtResource("9_lenhy")]
+position = Vector2(647, 447)
+
+[node name="rocks" parent="." instance=ExtResource("10_1jqv7")]
+position = Vector2(590, 467)
+
+[node name="rocks2" parent="." instance=ExtResource("10_1jqv7")]
+position = Vector2(678, 368)
