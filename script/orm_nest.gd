@@ -15,10 +15,10 @@ func _process(delta):
 	if spawn_timer.time_left <= 0:
 		var orm = ORM1.instantiate()
 		
-		orm.position = Vector2(position.x + randi_range(-10, 10), position.y + randi_range(-5, 5))
+#		orm.position = Vector2(position.x + randi_range(-10, 10), position.y + randi_range(-5, 5))
 		orm.hp = orm_hp
 		
-		get_tree().root.add_child(orm)
+		add_child(orm)
 		spawn_timer.start()
 
 func get_stats(new_delay, new_orm_hp):

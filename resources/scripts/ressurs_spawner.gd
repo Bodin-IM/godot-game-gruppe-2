@@ -37,5 +37,5 @@ func _process(delta):
 func lets_place_it(ressurs):
 	var new_ressurs = ressurs.instantiate()
 	new_ressurs.position = position
-	get_tree().root.add_child.call_deferred(new_ressurs)
+	get_parent().add_child.call_deferred(new_ressurs)
 	queue_free()

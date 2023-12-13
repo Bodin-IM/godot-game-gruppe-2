@@ -24,7 +24,7 @@ func _process(delta):
 func lets_build_it(build):
 	var new_build = build.instantiate()
 	new_build.position = position
-	get_tree().root.add_child(new_build)
+	get_parent().add_child(new_build)
 	queue_free()
 
 func _on_body_entered(body):
