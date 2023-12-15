@@ -4,15 +4,18 @@
 [ext_resource type="Script" path="res://defense/scripts/walls.gd" id="1_qytcj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksubd"]
-size = Vector2(80, 30)
+size = Vector2(49, 14)
 
 [node name="wall_left_right" type="Node2D" groups=["build_group"]]
+
+[node name="Area2D" type="Area2D" parent="." groups=["build_group"]]
 script = ExtResource("1_qytcj")
 
-[node name="Area2D" type="Area2D" parent="."]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_ksubd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -0.75)
+scale = Vector2(0.635417, 0.453125)
 texture = ExtResource("1_8pimp")

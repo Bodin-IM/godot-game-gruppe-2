@@ -7,9 +7,9 @@
 size = Vector2(15, 30)
 
 [node name="wall_corner" type="Node2D" groups=["build_group"]]
-script = ExtResource("1_t56ct")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["build_group"]]
+script = ExtResource("1_t56ct")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["build_group"]]
 shape = SubResource("RectangleShape2D_neegd")
