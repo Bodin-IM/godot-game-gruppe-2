@@ -230,7 +230,6 @@ disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
-position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="Control" type="Control" parent="Camera2D"]
@@ -244,51 +243,47 @@ pivot_offset = Vector2(-55, -3)
 script = ExtResource("4_jwy7n")
 metadata/_edit_use_anchors_ = true
 
-[node name="Log" type="Sprite2D" parent="Camera2D/Control"]
-position = Vector2(-231, -84)
-scale = Vector2(0.929687, 1.14423)
-texture = ExtResource("4_dkrhs")
+[node name="GridContainer" type="GridContainer" parent="Camera2D/Control"]
+offset_left = -240.0
+offset_top = -96.0
+offset_right = -160.0
+offset_bottom = -38.0
+scale = Vector2(0.610382, 0.568615)
+columns = 3
 
-[node name="log_label" type="Label" parent="Camera2D/Control"]
+[node name="log" type="TextureRect" parent="Camera2D/Control/GridContainer"]
 layout_mode = 2
-offset_left = -215.0
-offset_top = -93.0
-offset_right = -176.0
-offset_bottom = -67.0
-scale = Vector2(0.813765, 0.697772)
-text = "tekst"
+texture = ExtResource("4_dkrhs")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="rock_label" type="Label" parent="Camera2D/Control"]
-offset_left = -214.0
-offset_top = -75.0
-offset_right = -175.0
-offset_bottom = -49.0
-scale = Vector2(0.784801, 0.702528)
-text = "tekst"
-
-[node name="Label" type="Label" parent="Camera2D/Control"]
-layout_mode = 0
-offset_left = -220.0
-offset_top = -77.0
-offset_right = -180.0
-offset_bottom = -51.0
-scale = Vector2(0.826806, 0.830562)
+[node name="semikolon1" type="Label" parent="Camera2D/Control/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
 text = ":"
 
-[node name="Label2" type="Label" parent="Camera2D/Control"]
-offset_left = -220.0
-offset_top = -95.0
-offset_right = -180.0
-offset_bottom = -69.0
-scale = Vector2(0.826806, 0.830562)
-text = ":"
+[node name="log_label" type="Label" parent="Camera2D/Control/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "tekst"
 
-[node name="Stone" type="Sprite2D" parent="Camera2D/Control"]
-position = Vector2(-232, -70)
-scale = Vector2(1.3125, 1.3125)
+[node name="rock" type="TextureRect" parent="Camera2D/Control/GridContainer"]
+layout_mode = 2
 texture = ExtResource("6_iceuc")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="semikolon2" type="Label" parent="Camera2D/Control/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = ":"
+
+[node name="rock_label" type="Label" parent="Camera2D/Control/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "tekst"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="area_entered" from="AttackArea" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]
+[connection signal="area_entered" from="AttackArea" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
