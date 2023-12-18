@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://tc5itcvnha2"]
+[gd_scene load_steps=13 format=3 uid="uid://tc5itcvnha2"]
 
 [ext_resource type="PackedScene" uid="uid://dhdjm32hoc2hw" path="res://scenes/player.tscn" id="1_h1moy"]
 [ext_resource type="Script" path="res://script/pre_world.gd" id="1_lfbpn"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c5177ogry76xu" path="res://scenes/orm_nest.tscn" id="7_762ui"]
 [ext_resource type="PackedScene" uid="uid://dsst0jpce16q1" path="res://defense/scenes/wall_left_right.tscn" id="9_sv8dt"]
 [ext_resource type="Script" path="res://defense/scripts/walls.gd" id="10_p7ogc"]
+[ext_resource type="PackedScene" uid="uid://rkuxll0i27t0" path="res://defense/scenes/wall_corner.tscn" id="11_hqkcl"]
+[ext_resource type="PackedScene" uid="uid://cyj606fe4h7cy" path="res://defense/scenes/wall_up_down.tscn" id="12_evyp0"]
 
 [node name="preWorld" type="Node2D"]
 script = ExtResource("1_lfbpn")
@@ -36,8 +38,14 @@ position = Vector2(555, 293)
 position = Vector2(479, 433)
 
 [node name="OrmNest" parent="." instance=ExtResource("7_762ui")]
-position = Vector2(540, 463)
+position = Vector2(542, 556)
 
 [node name="wall_left_right" parent="." instance=ExtResource("9_sv8dt")]
-position = Vector2(551, 348)
+position = Vector2(553, 441)
 script = ExtResource("10_p7ogc")
+
+[node name="wall_corner" parent="." instance=ExtResource("11_hqkcl")]
+position = Vector2(615, 441)
+
+[node name="wall_up_down" parent="." instance=ExtResource("12_evyp0")]
+position = Vector2(508, 456)
