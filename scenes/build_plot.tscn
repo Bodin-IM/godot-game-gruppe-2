@@ -20,6 +20,7 @@ texture = ExtResource("1_tlm6v")
 
 [node name="Control" type="Control" parent="." groups=["build_plot"]]
 visible = false
+z_index = 50
 layout_mode = 3
 anchors_preset = 0
 offset_left = -48.0

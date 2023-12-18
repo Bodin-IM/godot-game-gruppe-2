@@ -1,8 +1,11 @@
 extends Node2D
 
 var level = 0
-
 var build_plots = 0
+
+var new_nest = preload("res://scenes/orm_nest.tscn")
+
+@onready var nest_timer = $NestTimer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,6 +16,8 @@ func _ready():
 	build_plots = get_tree().get_nodes_in_group("build_plot").size()
 	print(build_plots)
 	GlobalWorld.remove_plot.connect(progressing)
+	
+	nest_timer.wait_time -= level * 10
 	
 
 	
@@ -37,3 +42,10 @@ func progressing():
 	if build_plots <= 1:
 		print("Oooo")
 		next_level()
+
+
+func _on_nest_timer_timeout():
+	var spawn_nest = new_nest.instantiate()
+	spawn_nest.position.y = -576
+	spawn_nest.get_stats(7, 20 + (level * 5))
+	add_child(spawn_nest)

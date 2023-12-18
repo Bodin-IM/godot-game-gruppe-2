@@ -33,6 +33,3 @@ func dead_tree():
 	stubbe.visible = true
 	tre.visible = false
 	
-	
-	
-	
