@@ -34,7 +34,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="rocks" type="Area2D" groups=["ressurs_object"]]
+[node name="rocks" type="Area2D" groups=["ressurs_object", "stone_group"]]
 script = ExtResource("1_nn6wy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

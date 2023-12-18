@@ -12,18 +12,24 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if spawn_timer.time_left <= 0:
-		var orm = ORM1.instantiate()
-		
-		orm.position = Vector2(position.x + randi_range(-10, 10), position.y + randi_range(-5, 5))
-		orm.hp = orm_hp
-		
-		get_tree().root.add_child(orm)
-		spawn_timer.start()
-
-func get_stats(new_delay, new_orm_hp):
-	spawn_delay = new_delay
-	spawn_timer.wait_time = spawn_delay
+	pass
+	
+func _on_spawn_timer_timeout():
+	var orm = ORM1.instantiate()
+#	orm.position = Vector2(position.x + randi_range(-10, 10), position.y + randi_range(-5, 5))
+	orm.hp = orm_hp
+	
+	add_child(orm)
 	spawn_timer.start()
 	
+	if spawn_timer.time_left > 1:
+		spawn_timer.wait_time -= spawn_timer.wait_time * 0.02
+
+
+func get_stats(new_delay, new_orm_hp):
+	spawn_timer = $SpawnTimer
+	spawn_delay = new_delay
+	spawn_timer.wait_time = spawn_delay
 	orm_hp = new_orm_hp
+
+
