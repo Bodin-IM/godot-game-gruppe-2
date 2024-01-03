@@ -19,7 +19,6 @@ func _process(delta):
 	pass
 		
 	
-	
 func on_hit():
 	if (dead == false):
 		tree_lives -= 1

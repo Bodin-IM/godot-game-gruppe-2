@@ -11,10 +11,10 @@ func _ready():
 func _physics_process(delta):
 	progressbar.value = hp
 	
-	if (hp > 70): 
+	if (hp > 60): 
 		progressbar.modulate = "#00ff00"
 	
-	if (hp < 70):
+	if (hp < 60):
 		progressbar.modulate = "#ffff00"
 		
 	if (hp < 30):
@@ -22,6 +22,5 @@ func _physics_process(delta):
 	
 	
 func on_hit():
-	hp -= 3
 	if (hp < 1):
 		queue_free()
