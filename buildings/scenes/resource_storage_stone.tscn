@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_deoav"]
 size = Vector2(48, 48)
 
-[node name="Node2D" type="Node2D" groups=["build_nodes"]]
+[node name="Node2D" type="Node2D" groups=["build_nodes", "rock_upgrader"]]
 script = ExtResource("1_182i5")
 
 [node name="Area2D" type="Area2D" parent="." groups=["build_group"]]

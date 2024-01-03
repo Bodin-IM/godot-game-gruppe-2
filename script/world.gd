@@ -15,7 +15,9 @@ func _ready():
 	
 	build_plots = get_tree().get_nodes_in_group("build_plot").size()
 	print(build_plots)
+	
 	GlobalWorld.remove_plot.connect(progressing)
+	
 	
 	nest_timer.wait_time -= level * 10
 	

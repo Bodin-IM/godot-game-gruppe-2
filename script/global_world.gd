@@ -2,6 +2,9 @@ extends Node
 
 var level = 0
 
+var tree_attack = 1
+var stone_attack = 1
+
 signal remove_plot()
 
 # Called when the node enters the scene tree for the first time.
