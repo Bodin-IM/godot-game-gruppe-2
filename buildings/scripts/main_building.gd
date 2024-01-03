@@ -23,4 +23,5 @@ func _physics_process(delta):
 	
 func on_hit():
 	hp -= 3
-	
+	if (hp < 1):
+		queue_free()
