@@ -4,17 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://dthu5w15gc1pk" path="res://defense/assets/fence_corner.png" id="1_td6ha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_neegd"]
-size = Vector2(15, 30)
+size = Vector2(10, 18)
 
 [node name="wall_corner" type="Node2D" groups=["build_group"]]
 
 [node name="Area2D" type="Area2D" parent="." groups=["build_group"]]
+collision_layer = 32
+collision_mask = 0
 script = ExtResource("1_t56ct")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["build_group"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_neegd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(0.25, -0.249999)
-scale = Vector2(1.02381, 0.984848)
+scale = Vector2(0.714286, 0.606061)
 texture = ExtResource("1_td6ha")
