@@ -20,7 +20,3 @@ func _physics_process(delta):
 	if (hp < 15):
 		progressbar.modulate = "#de0000"
 	
-	
-func on_hit():
-	if (hp < 1):
-		queue_free()

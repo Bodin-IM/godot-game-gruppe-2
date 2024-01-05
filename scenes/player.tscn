@@ -279,10 +279,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer" type="GridContainer" parent="Camera2D/Control"]
 layout_mode = 0
-offset_left = -240.0
-offset_top = -96.0
-offset_right = -160.0
-offset_bottom = -38.0
+offset_left = -270.0
+offset_top = -113.0
+offset_right = -190.0
+offset_bottom = -55.0
 scale = Vector2(0.610382, 0.568615)
 columns = 3
 

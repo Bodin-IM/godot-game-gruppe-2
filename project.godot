@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Resources="*res://resources/scripts/resource.gd"
 GlobalWorld="*res://script/global_world.gd"
+GlobalBuildings="*res://buildings/scripts/Global_buildings.gd"
 
 [input]
 

@@ -2,8 +2,9 @@ extends Node2D
 
 @onready var progressbar = $Area2D/Sprite2D/ProgressBar 
 
-var hp = 100
+var hp = GlobalBuildings.hp
 var max_hp = hp
+
 
 func _ready():
 	progressbar.max_value = max_hp
@@ -21,6 +22,7 @@ func _physics_process(delta):
 		progressbar.modulate = "#de0000"
 	
 	
-func on_hit():
-	if (hp < 1):
-		queue_free()
+	
+	
+	
+	

@@ -1,5 +1,6 @@
 extends Node2D
 
+
 var hp = 100
 
 func on_hit():
