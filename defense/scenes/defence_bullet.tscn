@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cooqxei6r1kw2"]
+
+[ext_resource type="Script" path="res://defense/scripts/defence_bullet.gd" id="1_rhptd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1xwr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bdujj"]
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_rhptd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y1xwr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(16, 16)
+texture = SubResource("CanvasTexture_bdujj")

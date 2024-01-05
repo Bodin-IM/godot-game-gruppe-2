@@ -3,13 +3,15 @@ extends Node2D
 var target = null
 var attackRange = 200
 var shooting_delay = 1.0  # Set the delay between shots
-var damage_per_shot = 10
+var damage_per_shot = 2
 
 var time_since_last_shot = 0.0
 
+var bullet = preload("res://defense/scenes/defence_bullet.tscn")
+
 func _process(delta):
-	if target:
-		rotate_towards_target(target.position)
+	if target != null:
+#		rotate_towards_target(target.position)
 
 		# Implement shooting logic
 		time_since_last_shot += delta
@@ -30,12 +32,12 @@ func rotate_towards_target(target_position):
 	rotation = angle
 
 func shoot():
-	# Implement damage logic
+	var new_bullet = bullet.instantiate()
+	
+	add_child(new_bullet)
+	new_bullet.look_towards(target.position)
+#	# Implement damage logic
 	if target:
-		# Apply damage to the target
- 		target.take_damage(damage_per_shot)
-
-		# Optionally, check if the target is destroyed and reset the target
 		if target.is_dead():
 			reset_target()
 
