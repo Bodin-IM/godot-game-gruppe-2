@@ -33,7 +33,7 @@ func shoot():
 	# Implement damage logic
 	if target:
 		# Apply damage to the target
-		target.take_damage(damage_per_shot)
+ 		target.take_damage(damage_per_shot)
 
 		# Optionally, check if the target is destroyed and reset the target
 		if target.is_dead():
