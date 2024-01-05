@@ -20,3 +20,11 @@ shape = SubResource("RectangleShape2D_s07se")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("1_dy126")
+
+[node name="ProgressBar" type="ProgressBar" parent="Area2D/Sprite2D"]
+modulate = Color(0, 1, 0, 1)
+offset_left = -18.0
+offset_top = -29.0
+offset_right = 21.0
+offset_bottom = -25.0
+show_percentage = false
