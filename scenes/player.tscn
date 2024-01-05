@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dhdjm32hoc2hw"]
+[gd_scene load_steps=35 format=3 uid="uid://dhdjm32hoc2hw"]
 
 [ext_resource type="Texture2D" uid="uid://dnrijlvs4u1ki" path="res://assets/characters/crab.png" id="1_1s08c"]
 [ext_resource type="Script" path="res://script/player.gd" id="1_fe1nv"]
