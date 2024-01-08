@@ -63,6 +63,8 @@ what_build = ExtResource("9_hils5")
 [node name="BuildPlot4" parent="." instance=ExtResource("8_pgyg8")]
 position = Vector2(104, 104)
 label = "Defense Tower"
+wood_price = 15
+stone_price = 15
 what_build = ExtResource("9_hils5")
 
 [node name="BuildPlot5" parent="." instance=ExtResource("8_pgyg8")]
@@ -79,29 +81,29 @@ wood_price = 15
 stone_price = 15
 what_build = ExtResource("9_hils5")
 
+[node name="BuildPlot10" parent="." instance=ExtResource("8_pgyg8")]
+position = Vector2(0, -236)
+label = "Crab Knights"
+wood_price = 10
+stone_price = 20
+what_build = ExtResource("10_8yoa2")
+
+[node name="BuildPlot11" parent="." instance=ExtResource("8_pgyg8")]
+position = Vector2(-96, -212)
+label = "Crab Knights"
+wood_price = 10
+stone_price = 20
+what_build = ExtResource("10_8yoa2")
+
+[node name="BuildPlot12" parent="." instance=ExtResource("8_pgyg8")]
+position = Vector2(93, -212)
+label = "Crab Knights"
+wood_price = 10
+stone_price = 20
+what_build = ExtResource("10_8yoa2")
+
 [node name="BuildPlot7" parent="." instance=ExtResource("8_pgyg8")]
 position = Vector2(0, 240)
-label = "Crab Knights"
-wood_price = 10
-stone_price = 20
-what_build = ExtResource("10_8yoa2")
-
-[node name="BuildPlot7" parent="BuildPlot7" instance=ExtResource("8_pgyg8")]
-position = Vector2(0, -476)
-label = "Crab Knights"
-wood_price = 10
-stone_price = 20
-what_build = ExtResource("10_8yoa2")
-
-[node name="BuildPlot8" parent="BuildPlot7" instance=ExtResource("8_pgyg8")]
-position = Vector2(-96, -452)
-label = "Crab Knights"
-wood_price = 10
-stone_price = 20
-what_build = ExtResource("10_8yoa2")
-
-[node name="BuildPlot9" parent="BuildPlot7" instance=ExtResource("8_pgyg8")]
-position = Vector2(93, -452)
 label = "Crab Knights"
 wood_price = 10
 stone_price = 20
