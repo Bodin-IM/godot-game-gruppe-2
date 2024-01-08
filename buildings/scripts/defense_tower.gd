@@ -22,7 +22,7 @@ func _process(delta):
 	# Check for enemies in range and set as target
 	var enemies = get_tree().get_nodes_in_group("enemy_group")
 	for enemy in enemies:
-		var distance = position.distance_to(enemy.position)
+		var distance = global_position.distance_to(enemy.global_position)
 		if distance < attackRange and not target:
 			set_target(enemy)
 			break
@@ -33,16 +33,17 @@ func rotate_towards_target(target_position):
 
 func shoot():
 	var new_bullet = bullet.instantiate()
-	
+	new_bullet.look_towards(target.global_position)
 	add_child(new_bullet)
-	new_bullet.look_towards(target.position)
+	print(target.global_position)
 #	# Implement damage logic
-	if target:
-		if target.is_dead():
-			reset_target()
+#	if target:
+#		if target.is_dead():
+#			reset_target()
 
 func set_target(new_target):
 	target = new_target
 
 func reset_target():
 	target = null
+	print("dødd")
