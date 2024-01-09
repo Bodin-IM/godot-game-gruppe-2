@@ -8,5 +8,5 @@ func on_hit():
 		destroyed()
 
 func destroyed():
-	queue_free()
+	get_parent().queue_free()
 	print("Crumbled")
