@@ -7,6 +7,7 @@ var rng = RandomNumberGenerator.new()
 @onready var tre = $Tree
 @onready var tree_lives = 5
 @onready var ressurser_tre = rng.randi_range(5, 10)
+@onready var damage_taken = 1
 
 var dead = false
 
@@ -21,7 +22,10 @@ func _process(delta):
 	
 func on_hit():
 	if (dead == false):
-		tree_lives -= 1
+		var wood_upgrade = get_tree().get_nodes_in_group("wood_upgrader").size()
+		if wood_upgrade > 0:
+			damage_taken = 2
+		tree_lives -= damage_taken
 		animations.play("tree_animation")
 		if (tree_lives < 1):
 			dead_tree()
