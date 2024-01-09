@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcvv5"]
 size = Vector2(45, 49)
 
-[node name="Node2D" type="Node2D" groups=["build_nodes"]]
+[node name="DefenseTower" type="Node2D" groups=["build_nodes"]]
 script = ExtResource("1_ww21i")
 
 [node name="Area2D" type="Area2D" parent="." groups=["build_group"]]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdmdxxfx2gtja"]
+
+[ext_resource type="Texture2D" uid="uid://ohcplvkufxlt" path="res://defense/assets/fence_up.png" id="1_ah2g2"]
+
+[node name="PreVerticalWall" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.490196)
+position = Vector2(2.38419e-07, 3.8147e-06)
+scale = Vector2(0.690476, 0.551546)
+texture = ExtResource("1_ah2g2")

@@ -233,7 +233,7 @@ animations = [{
 radius = 8.0
 height = 16.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["PlayerGroup"]]
 z_index = 2
 position = Vector2(32, 0)
 collision_layer = 2

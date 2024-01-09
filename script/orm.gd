@@ -100,12 +100,14 @@ func _on_attack_area_area_entered(area):
 
 
 
-func on_hit():
-	hp -= 5
+func on_hit(damage):
+	hp -= damage
 	death_check()
 
 func death_check():
-	
 	if hp <= 0:
 		print("ouch")
-		queue_free()
+		is_dead()
+
+func is_dead():
+	queue_free()
