@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var button = $Control/Button
 
-@export var label: String
+@export var label = "Bygg"
 @export var wood_price: int
 @export var stone_price: int
 @export var hp: int

@@ -46,6 +46,8 @@ func destroyed():
 		new_plot.hp = max_hp
 		new_plot.what_build = what_build
 		get_parent().get_parent().add_child(new_plot)
+	else: 
+		pass
 	get_parent().queue_free()
 	print("Crumbled")
 

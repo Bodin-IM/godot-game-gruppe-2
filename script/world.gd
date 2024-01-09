@@ -2,7 +2,7 @@ extends Node2D
 
 var level = 0
 var build_plots = 0
-var wall_price = 2
+var wall_price = 5
 
 var new_nest = preload("res://scenes/orm_nest.tscn")
 var fence_horizontal = preload("res://defense/scenes/wall_left_right.tscn")
@@ -19,7 +19,7 @@ var visible_fence = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	level = GlobalWorld.level
-	wall_price = GlobalWorld.wall_price
+#	wall_price = GlobalWorld.wall_price
 	print(level)
 	
 	build_plots = get_tree().get_nodes_in_group("build_plot").size()
