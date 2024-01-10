@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Resources="*res://resources/scripts/resource.gd"
 GlobalWorld="*res://script/global_world.gd"
+SfxPlayer="*res://scenes/SFXplayer.tscn"
+BackgroundMusic="*res://scenes/BackgroundMusic.tscn"
 
 [input]
 

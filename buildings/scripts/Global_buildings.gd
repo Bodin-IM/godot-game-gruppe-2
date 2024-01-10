@@ -11,6 +11,8 @@ var hp
 
 var plot = preload("res://scenes/build_plot.tscn")
 
+var sfx_crunch = preload("res://audio/byggCrunch.ogg")
+
 func _ready():
 	hp = max_hp
 	progressbar.max_value = max_hp
@@ -31,6 +33,7 @@ func _physics_process(delta):
 
 func on_hit():
 	hp -= 1
+	SfxPlayer.play_sound(sfx_crunch, get_tree().current_scene)
 	if hp <= 0:
 		call_deferred("destroyed")
 	

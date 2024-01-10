@@ -3,22 +3,30 @@ extends Node2D
 var target = null
 var attackRange = 200
 var shooting_delay = 1.0  # Set the delay between shots
-var damage_per_shot = 2
+var damage_per_shot = 5
 
 var time_since_last_shot = 0.0
 
+var can_shoot = true
 var bullet = preload("res://defense/scenes/defence_bullet.tscn")
+var shoot_sfx = preload("res://audio/defenseShoot.wav")
 
 func _process(delta):
 	if target != null:
 #		rotate_towards_target(target.position)
 
+func _ready():
+	$Timer.start()
+	
+func _process(_delta):
+	if target:
+		rotate_towards_target(target.position)
 		# Implement shooting logic
-		time_since_last_shot += delta
-		if time_since_last_shot >= shooting_delay:
+		if can_shoot:
+			print("shot")
 			shoot()
-			time_since_last_shot = 0.0
-
+			
+	reset_target()
 	# Check for enemies in range and set as target
 	var enemies = get_tree().get_nodes_in_group("enemy_group")
 	for enemy in enemies:
@@ -32,6 +40,17 @@ func rotate_towards_target(target_position):
 	rotation = angle
 
 func shoot():
+#	# Implement damage logic
+#	print("traff orm")
+#	# Apply damage to the target
+#	target.on_hit()
+#	$Timer.start()
+#	can_shoot = false
+#
+#	# Optionally, check if the target is destroyed and reset the target
+#	if target.death_check():
+#		reset_target()
+	SfxPlayer.play_sound(shoot_sfx, get_tree().current_scene)
 	var new_bullet = bullet.instantiate()
 	new_bullet.look_towards(target.global_position)
 	add_child(new_bullet)
@@ -46,4 +65,8 @@ func set_target(new_target):
 
 func reset_target():
 	target = null
-	print("dødd")
+
+
+func _on_timer_timeout():
+	print("timer timeout")
+	can_shoot = true

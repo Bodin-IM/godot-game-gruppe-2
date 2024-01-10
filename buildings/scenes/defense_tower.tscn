@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcvv5"]
 size = Vector2(45, 49)
 
-[node name="DefenseTower" type="Node2D" groups=["build_nodes"]]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_ww21i")
 
 [node name="Area2D" type="Area2D" parent="." groups=["build_group"]]
@@ -21,10 +21,8 @@ shape = SubResource("RectangleShape2D_qcvv5")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("1_po13l")
 
-[node name="ProgressBar" type="ProgressBar" parent="Area2D/Sprite2D"]
-modulate = Color(0, 1, 0, 1)
-offset_left = -20.0
-offset_top = -29.0
-offset_right = 19.0
-offset_bottom = -25.0
-show_percentage = false
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.337
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

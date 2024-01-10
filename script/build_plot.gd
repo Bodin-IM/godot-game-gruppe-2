@@ -22,6 +22,8 @@ extends Area2D
 
 @onready var control = $Control
 
+var bygg_sfx = preload("res://audio/byggBygg.wav")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button.text = "Build " + label + "
@@ -35,6 +37,7 @@ func _process(delta):
 func lets_build_it():
 	print(Resources.tre_ressurser, ", ", Resources.stein_ressurser)
 	if what_build and Resources.tre_ressurser >= wood_price and Resources.stein_ressurser >= stone_price:
+		SfxPlayer.play_sound(bygg_sfx, get_tree().current_scene)
 		var new_build = what_build.instantiate()
 		
 		new_build.position = position
