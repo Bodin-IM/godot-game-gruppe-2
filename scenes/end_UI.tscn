@@ -5,7 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bi0ucuo5iqrog" path="res://assets/Button25.png" id="3_24q1w"]
 [ext_resource type="Texture2D" uid="uid://bvp5t45hhwmt8" path="res://assets/Button18.png" id="4_smxj8"]
 
-[node name="UI2" type="CanvasLayer"]
+[node name="end_UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_6djsf")
 
 [node name="end_of_game_screen" type="Node2D" parent="."]
@@ -28,51 +29,50 @@ position = Vector2(104.5, 17.5)
 scale = Vector2(1.44118, 0.747126)
 texture = ExtResource("3_24q1w")
 
-[node name="Label_quit" type="Label" parent="end_of_game_screen"]
-offset_left = -10.0
-offset_top = 6.0
-offset_right = 41.0
-offset_bottom = 35.0
+[node name="Label_quit" type="Label" parent="end_of_game_screen/quit_button"]
+offset_left = 69.0
+offset_top = -3.0
+offset_right = 120.0
+offset_bottom = 26.0
 scale = Vector2(1.565, 1.565)
 text = "Quit"
 
 [node name="restart_button" type="Button" parent="end_of_game_screen"]
 self_modulate = Color(1, 1, 1, 0)
-anchors_preset = -1
-anchor_left = -0.0598958
-anchor_top = 0.100309
-anchor_right = 0.0868056
-anchor_bottom = 0.141975
-offset_left = -107.0
-offset_top = 54.0
-offset_right = -28.0
-offset_bottom = 73.0
+offset_left = -137.0
+offset_top = 37.25
+offset_right = -58.0
+offset_bottom = 56.25
 metadata/_edit_use_anchors_ = true
-
-[node name="restart" type="Sprite2D" parent="end_of_game_screen/restart_button"]
-position = Vector2(123, 22)
-scale = Vector2(1.224, 0.890804)
-texture = ExtResource("4_smxj8")
-
-[node name="Label_restart" type="Label" parent="end_of_game_screen/restart_button"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 2.0
-offset_right = 142.0
-offset_bottom = 54.0
-scale = Vector2(1.675, 1.675)
-text = "Start new game
-
-"
 
 [node name="Label" type="Label" parent="end_of_game_screen"]
 modulate = Color(0, 0, 0, 1)
-offset_left = -162.0
-offset_top = -101.0
-offset_right = 82.0
-offset_bottom = -33.0
+offset_left = -154.0
+offset_top = -90.0
+offset_right = 90.0
+offset_bottom = -22.0
 scale = Vector2(2.625, 2.625)
 text = "Level completed!!"
 
-[connection signal="pressed" from="end_of_game_screen/quit_button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="end_of_game_screen/restart_button" to="." method="_on_restart_button_pressed"]
+[node name="quit_button2" type="Button" parent="end_of_game_screen"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -105.0
+offset_top = 59.0
+offset_right = 100.0
+offset_bottom = 96.0
+scale = Vector2(1.2, 1)
+
+[node name="restart" type="Sprite2D" parent="end_of_game_screen/quit_button2"]
+position = Vector2(99.1667, 17)
+scale = Vector2(1.12, 0.890804)
+texture = ExtResource("4_smxj8")
+
+[node name="Label_restart" type="Label" parent="end_of_game_screen/quit_button2"]
+offset_top = -3.0
+offset_right = 122.0
+offset_bottom = 49.0
+scale = Vector2(1.675, 1.675)
+text = "Go to next level"
+
+[connection signal="pressed" from="end_of_game_screen/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="end_of_game_screen/quit_button2" to="." method="_on_quit_button_2_pressed"]

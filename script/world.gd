@@ -93,10 +93,12 @@ func show_fence():
 
 
 func next_level():
-	# dette virker ikke, jeg tror det er fordi scenen allerede har blitt brukt eller noe sånt
+	get_tree().paused = true
 	GlobalWorld.level_complete()
-	
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	# dette virker ikke, jeg tror det er fordi scenen allerede har blitt brukt eller noe sånt
+#	GlobalWorld.level_complete()
+#
+#	get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 func progressing():
 	build_plots = get_tree().get_nodes_in_group("build_plot").size()

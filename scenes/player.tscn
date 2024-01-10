@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dhdjm32hoc2hw"]
+[gd_scene load_steps=36 format=3 uid="uid://dhdjm32hoc2hw"]
 
 [ext_resource type="Texture2D" uid="uid://dnrijlvs4u1ki" path="res://assets/characters/crab.png" id="1_1s08c"]
 [ext_resource type="Script" path="res://script/player.gd" id="1_fe1nv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cea8q6dm032mi" path="res://assets/objects/log.png" id="4_dkrhs"]
 [ext_resource type="Script" path="res://resources/scripts/Control.gd" id="4_jwy7n"]
 [ext_resource type="Texture2D" uid="uid://cg5cgtad75cy1" path="res://assets/objects/stone.png" id="6_iceuc"]
+[ext_resource type="PackedScene" uid="uid://ck5c6cxcbt82l" path="res://scenes/end_UI.tscn" id="7_wikwj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_srrj8"]
 radius = 4.0
@@ -328,6 +329,8 @@ theme_override_font_sizes/font_size = 12
 text = "Fence price: 5 wood + 5 stone
 F/mid mouse button: show fence
 Right mouse button: place fence"
+
+[node name="UI2" parent="Camera2D/Control" instance=ExtResource("7_wikwj")]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]

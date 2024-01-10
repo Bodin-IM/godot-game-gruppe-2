@@ -5,12 +5,17 @@ const SPEED = 100.0
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var attack_area = $AttackArea
 @onready var attack_shape = $AttackArea/CollisionShape2D
+@onready var ui_2 = $Camera2D/Control/UI2
 
 var is_attacking = false
 var moving_vertical = false
 var vertical_direction = false
 
 var attack_sfx = preload("res://audio/playerAttack.wav")
+
+func _ready():
+	ui_2.visible = false
+	GlobalWorld.level_complete_canvas.connect(show_hide_canvas)
 
 
 func _physics_process(delta):
@@ -108,3 +113,7 @@ func _on_attack_area_body_entered(body):
 		print("traff orm")
 		body.on_hit(5)
 
+
+func show_hide_canvas():
+	ui_2.visible = true
+	

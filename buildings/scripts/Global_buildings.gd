@@ -50,7 +50,8 @@ func destroyed():
 		new_plot.what_build = what_build
 		get_parent().get_parent().add_child(new_plot)
 	else: 
-		pass
+		GlobalWorld.reset()
+		get_tree().change_scene_to_file("res://scenes/start_UI.tscn")
 	get_parent().queue_free()
 	print("Crumbled")
 
