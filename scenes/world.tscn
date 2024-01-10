@@ -30,6 +30,7 @@ layer_1/tile_data = PackedInt32Array(-1900576, 196609, 5, -1835040, 196609, 5, -
 position = Vector2(0, 64)
 
 [node name="MainBuild" parent="." instance=ExtResource("2_kvd6q")]
+position = Vector2(1, -1)
 
 [node name="OrmNest" parent="." instance=ExtResource("6_3h6vq")]
 position = Vector2(0, 576)

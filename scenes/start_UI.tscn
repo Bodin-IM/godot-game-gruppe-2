@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://snvlsaoi02i3"]
+
+[ext_resource type="Script" path="res://script/start_UI.gd" id="1_ast18"]
+[ext_resource type="Texture2D" uid="uid://d3hocn48vommb" path="res://assets/menu.png" id="2_rp3y4"]
+[ext_resource type="Texture2D" uid="uid://bi0ucuo5iqrog" path="res://assets/Button25.png" id="3_gn5bc"]
+[ext_resource type="Texture2D" uid="uid://bvp5t45hhwmt8" path="res://assets/Button18.png" id="3_oa0dd"]
+
+[node name="start_UI" type="CanvasLayer"]
+script = ExtResource("1_ast18")
+
+[node name="start_of_game_screen" type="Node2D" parent="."]
+position = Vector2(578, 306)
+
+[node name="Menu" type="Sprite2D" parent="start_of_game_screen"]
+position = Vector2(1, 1)
+scale = Vector2(11.4583, 12.875)
+texture = ExtResource("2_rp3y4")
+
+[node name="start_game" type="Sprite2D" parent="start_of_game_screen"]
+position = Vector2(16, 76)
+scale = Vector2(1.224, 0.890804)
+texture = ExtResource("3_oa0dd")
+
+[node name="start_button" type="Button" parent="start_of_game_screen/start_game"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = -0.057935
+anchor_top = 0.0968237
+anchor_right = 0.422065
+anchor_bottom = 0.476134
+offset_left = -85.5162
+offset_top = -33.4237
+offset_right = -6.51624
+offset_bottom = -14.4237
+metadata/_edit_use_anchors_ = true
+
+[node name="Label_start" type="Label" parent="start_of_game_screen/start_game/start_button"]
+layout_mode = 0
+offset_left = 22.8758
+offset_top = 3.3678
+offset_right = 114.876
+offset_bottom = 36.2328
+scale = Vector2(1.785, 1.785)
+text = "Start Game "
+
+[node name="quit_button" type="Button" parent="start_of_game_screen"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -87.0
+offset_top = 9.0
+offset_right = 118.0
+offset_bottom = 46.0
+
+[node name="quit" type="Sprite2D" parent="start_of_game_screen/quit_button"]
+position = Vector2(104.5, 17.5)
+scale = Vector2(1.44118, 0.747126)
+texture = ExtResource("3_gn5bc")
+
+[node name="Label_quit" type="Label" parent="start_of_game_screen/quit_button"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = -3.0
+offset_right = 128.0
+offset_bottom = 26.0
+scale = Vector2(1.565, 1.565)
+text = "Quit"
+
+[node name="Label" type="Label" parent="start_of_game_screen"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -130.0
+offset_top = -117.0
+offset_right = 30.0
+offset_bottom = -65.0
+scale = Vector2(1.82, 1.82)
+text = "hva skal det stå her 
+på starten av spillet?"
+
+[connection signal="pressed" from="start_of_game_screen/start_game/start_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="start_of_game_screen/quit_button" to="." method="_on_button_pressed"]
