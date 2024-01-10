@@ -2,15 +2,16 @@ extends Area2D
 
 @onready var button = $Control/Button
 
-@export var label: String
+@export var label = "Bygg"
 @export var wood_price: int
 @export var stone_price: int
+@export var hp: int
 
 
-var defense_tower = preload("res://buildings/scenes/defense_tower.tscn")
-var ridder_hytte = preload("res://buildings/scenes/ridder_krabber_hytte.tscn")
-var storage_wood = preload("res://buildings/scenes/resource_storage_wood.tscn")
-var storage_stone = preload("res://buildings/scenes/resource_storage_stone.tscn")
+#var defense_tower = preload("res://buildings/scenes/defense_tower.tscn")
+#var ridder_hytte = preload("res://buildings/scenes/ridder_krabber_hytte.tscn")
+#var storage_wood = preload("res://buildings/scenes/resource_storage_wood.tscn")
+#var storage_stone = preload("res://buildings/scenes/resource_storage_stone.tscn")
 
 @export var what_build: PackedScene
 
@@ -35,7 +36,15 @@ func lets_build_it():
 	print(Resources.tre_ressurser, ", ", Resources.stein_ressurser)
 	if what_build and Resources.tre_ressurser >= wood_price and Resources.stein_ressurser >= stone_price:
 		var new_build = what_build.instantiate()
+		
 		new_build.position = position
+		new_build.get_child(0).label = label
+		new_build.get_child(0).wood_price = wood_price
+		new_build.get_child(0).stone_price = stone_price
+		new_build.get_child(0).max_hp = hp
+		new_build.get_child(0).what_build = what_build
+		
+		
 		get_parent().add_child(new_build)
 		queue_free()
 		Resources.tre_ressurser -= wood_price

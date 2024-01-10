@@ -24,7 +24,7 @@ func _process(_delta):
 	# Check for enemies in range and set as target
 	var enemies = get_tree().get_nodes_in_group("enemy_group")
 	for enemy in enemies:
-		var distance = position.distance_to(enemy.position)
+		var distance = global_position.distance_to(enemy.global_position)
 		if distance < attackRange and not target:
 			set_target(enemy)
 			break

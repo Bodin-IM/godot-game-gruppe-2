@@ -106,7 +106,9 @@ func on_hit():
 	death_check()
 
 func death_check():
-	
 	if hp <= 0:
 		print("ouch")
-		queue_free()
+		is_dead()
+
+func is_dead():
+	queue_free()

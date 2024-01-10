@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c01jn38ldum2i"]
+[gd_scene load_steps=20 format=3 uid="uid://m5w3cf8g31s1"]
 
 [ext_resource type="Script" path="res://script/orm.gd" id="1_v5t7j"]
 [ext_resource type="Texture2D" path="res://assets/characters/new_orm.png" id="2_m67c4"]
@@ -115,8 +115,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hy88r"]
-radius = 68.0
-height = 136.0
+radius = 88.0
+height = 176.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6xg7q"]
 radius = 7.0

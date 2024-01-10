@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://cooqxei6r1kw2"]
+
+[ext_resource type="Script" path="res://defense/scripts/defence_bullet.gd" id="1_rhptd"]
+[ext_resource type="Texture2D" uid="uid://go822asm3yqx" path="res://assets/characters/crab_bullet.png" id="2_grsbd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1xwr"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ijto"]
+atlas = ExtResource("2_grsbd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xrin"]
+atlas = ExtResource("2_grsbd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uh8mm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ijto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xrin")
+}],
+"loop": true,
+"name": &"chomp",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DefenseBullet" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_rhptd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y1xwr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uh8mm")
+animation = &"chomp"
+frame_progress = 0.79838
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

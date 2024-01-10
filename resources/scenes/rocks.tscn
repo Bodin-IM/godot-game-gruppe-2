@@ -1,41 +1,41 @@
-[gd_scene load_steps=9 format=3 uid="uid://cprlovjeanhk7"]
+[gd_scene load_steps=9 format=3 uid="uid://d07ty61bshb4w"]
 
-[ext_resource type="Script" path="res://resources/scripts/rocks.gd" id="1_nn6wy"]
-[ext_resource type="Texture2D" uid="uid://bdktk581x65ob" path="res://assets/objects/rock1.png" id="2_rvt7i"]
-[ext_resource type="Texture2D" uid="uid://ua37hg0muibn" path="res://assets/objects/rock2.png" id="3_axvoq"]
-[ext_resource type="Texture2D" uid="uid://c2q4iu244y6gm" path="res://assets/objects/rock3.png" id="4_axx8m"]
-[ext_resource type="Texture2D" uid="uid://cushyof7iy5o6" path="res://assets/objects/rock4.png" id="5_rbguk"]
-[ext_resource type="Texture2D" uid="uid://bhdjl64k7tnyd" path="res://assets/objects/rock5.png" id="6_244ab"]
-[ext_resource type="Texture2D" uid="uid://c7cia2xc5lwnj" path="res://assets/objects/rock6.png" id="7_tcmxb"]
+[ext_resource type="Script" path="res://resources/scripts/rocks.gd" id="1_n1ow1"]
+[ext_resource type="Texture2D" uid="uid://bdktk581x65ob" path="res://assets/objects/rock1.png" id="2_xabft"]
+[ext_resource type="Texture2D" uid="uid://ua37hg0muibn" path="res://assets/objects/rock2.png" id="3_ujlcm"]
+[ext_resource type="Texture2D" uid="uid://c2q4iu244y6gm" path="res://assets/objects/rock3.png" id="4_sox1i"]
+[ext_resource type="Texture2D" uid="uid://cushyof7iy5o6" path="res://assets/objects/rock4.png" id="5_h2rj8"]
+[ext_resource type="Texture2D" uid="uid://bhdjl64k7tnyd" path="res://assets/objects/rock5.png" id="6_aumvx"]
+[ext_resource type="Texture2D" uid="uid://c7cia2xc5lwnj" path="res://assets/objects/rock6.png" id="7_j7uxn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5pmuy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rvt7i")
+"texture": ExtResource("2_xabft")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_axvoq")
+"texture": ExtResource("3_ujlcm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_axx8m")
+"texture": ExtResource("4_sox1i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_rbguk")
+"texture": ExtResource("5_h2rj8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_244ab")
+"texture": ExtResource("6_aumvx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_tcmxb")
+"texture": ExtResource("7_j7uxn")
 }],
 "loop": true,
 "name": &"new_animation",
 "speed": 5.0
 }]
 
-[node name="rocks" type="Area2D" groups=["ressurs_object", "stone_group"]]
-script = ExtResource("1_nn6wy")
+[node name="rocks" type="Area2D" groups=["ressurs_object"]]
+script = ExtResource("1_n1ow1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-0.58125, 0.525)
@@ -47,3 +47,9 @@ position = Vector2(7.5, -7)
 scale = Vector2(0.9375, 0.875)
 sprite_frames = SubResource("SpriteFrames_5pmuy")
 animation = &"new_animation"
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

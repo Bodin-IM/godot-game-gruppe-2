@@ -105,5 +105,5 @@ func _on_attack_area_area_entered(area):
 func _on_attack_area_body_entered(body):
 	if body.is_in_group("enemy_group"):
 		print("traff orm")
-		body.on_hit()
+		body.on_hit(5)
 
