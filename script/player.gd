@@ -10,14 +10,15 @@ var is_attacking = false
 var moving_vertical = false
 var vertical_direction = false
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var attack_sfx = preload("res://audio/playerAttack.wav")
 
 
 func _physics_process(delta):
 	var input_axis_x = Input.get_axis("left", "right")
 	var input_axis_y = Input.get_axis("up", "down")
 	if Input.is_action_just_pressed("attack"):
+		if !is_attacking:
+			SfxPlayer.play_sound(attack_sfx, get_tree().current_scene)
 		is_attacking = true
 	var direction = Vector2(input_axis_x, input_axis_y)
 	apply_movement(delta, direction)

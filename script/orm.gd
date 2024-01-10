@@ -14,7 +14,7 @@ var shmoovin = false
 var is_attacking = false
 
 var hp = 10
-
+var hurt_sfx = preload("res://audio/ormHurt.ogg")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# fargen trenger ikke være tilfeldig, jeg gjorde bare dette for gøy
@@ -102,6 +102,7 @@ func _on_attack_area_area_entered(area):
 
 func on_hit(damage):
 	hp -= damage
+	SfxPlayer.play_sound(hurt_sfx, get_tree().current_scene)
 	death_check()
 
 func death_check():

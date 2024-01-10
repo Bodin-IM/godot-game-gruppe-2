@@ -14,7 +14,8 @@ var visible_fence = false
 @onready var pre_horizontal_wall = $PreHorizontalWall
 @onready var pre_vertical_wall = $PreVerticalWall
 
-
+var fenceError = preload("res://audio/wallError.ogg")
+var fencePlace = preload("res://audio/byggBygg.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -52,6 +53,7 @@ func _process(delta):
 
 func place_fence():
 	if Resources.tre_ressurser >= wall_price and Resources.stein_ressurser >= wall_price:
+		SfxPlayer.play_sound(fencePlace, get_tree().current_scene)
 		Resources.tre_ressurser -= wall_price
 		Resources.stein_ressurser -= wall_price
 		
@@ -66,6 +68,8 @@ func place_fence():
 			
 		spawn_fence.position = mus_pos
 		add_child(spawn_fence)
+	else:
+		SfxPlayer.play_sound(fenceError, get_tree().current_scene)
 	
 
 func show_fence():

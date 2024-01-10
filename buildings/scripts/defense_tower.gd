@@ -8,6 +8,7 @@ var damage_per_shot = 2
 var time_since_last_shot = 0.0
 
 var bullet = preload("res://defense/scenes/defence_bullet.tscn")
+var shoot_sfx = preload("res://audio/defenseShoot.wav")
 
 func _process(delta):
 	if target != null:
@@ -32,6 +33,7 @@ func rotate_towards_target(target_position):
 	rotation = angle
 
 func shoot():
+	SfxPlayer.play_sound(shoot_sfx, get_tree().current_scene)
 	var new_bullet = bullet.instantiate()
 	new_bullet.look_towards(target.global_position)
 	add_child(new_bullet)
