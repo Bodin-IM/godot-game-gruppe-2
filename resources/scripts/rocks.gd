@@ -2,6 +2,7 @@ extends Area2D
 
 var rng = RandomNumberGenerator.new()
 
+@onready var respawn_timer = $RespawnTimer
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var rock_lives = 4
 @onready var ressurser_stein = rng.randi_range(5, 10)
@@ -40,3 +41,11 @@ func dead_rock():
 	if (animated_sprite_2d.frame < 5):
 		Resources.on_dead_rock(ressurser_stein)
 		animated_sprite_2d.frame=5
+		respawn_timer.start()
+
+
+func _on_respawn_timer_timeout():
+	var new_tree = load("res://resources/scenes/rocks.tscn").instantiate()
+	new_tree.position = position
+	get_parent().add_child(new_tree)
+	queue_free()

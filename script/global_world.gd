@@ -1,7 +1,7 @@
 extends Node
 
 var level = 0
-var wall_price = 2
+#var wall_price = 2
 
 var tree_attack = 1
 var stone_attack = 1
@@ -21,7 +21,7 @@ func _process(delta):
 
 func level_complete():
 	level += 1
-	wall_price += 1
+#	wall_price += 1
 	print("hurra, du vant")
 
 func build_built():
