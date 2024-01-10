@@ -102,6 +102,7 @@ func _on_attack_area_area_entered(area):
 
 func on_hit():
 	hp -= 5
+	print("hit orm", hp)
 	death_check()
 
 func death_check():

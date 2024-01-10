@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://32g4xuqcrhh3"]
+[gd_scene load_steps=14 format=3 uid="uid://b3v828efyoe3j"]
 
 [ext_resource type="PackedScene" uid="uid://dhdjm32hoc2hw" path="res://scenes/player.tscn" id="1_wrdoa"]
 [ext_resource type="Script" path="res://script/world.gd" id="1_x58i0"]
@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://doui8uwon7xr7" path="res://resources/scenes/trees.tscn" id="7_0m25r"]
 [ext_resource type="PackedScene" uid="uid://d3ng2q6c1qft0" path="res://buildings/scenes/resource_storage_wood.tscn" id="7_226r4"]
 [ext_resource type="PackedScene" uid="uid://bfih6cwit377x" path="res://buildings/scenes/resource_storage_stone.tscn" id="8_jo2dn"]
-[ext_resource type="PackedScene" uid="uid://buamfhyau3dr2" path="res://scenes/build_plot.tscn" id="8_pgyg8"]
+[ext_resource type="PackedScene" path="res://scenes/build_plot.tscn" id="8_pgyg8"]
 [ext_resource type="PackedScene" uid="uid://cprlovjeanhk7" path="res://resources/scenes/rocks.tscn" id="8_x086s"]
-[ext_resource type="PackedScene" uid="uid://i5s5jiwi6nkj" path="res://resources/scenes/ressurs_spawner.tscn" id="9_4f2y1"]
+[ext_resource type="PackedScene" path="res://resources/scenes/ressurs_spawner.tscn" id="9_4f2y1"]
 [ext_resource type="PackedScene" uid="uid://cl5bbklandckr" path="res://buildings/scenes/defense_tower.tscn" id="9_hils5"]
 [ext_resource type="PackedScene" uid="uid://b21ma7iqq5eg5" path="res://buildings/scenes/ridder_krabber_hytte.tscn" id="10_8yoa2"]
 
@@ -360,5 +360,11 @@ position = Vector2(200, -236)
 
 [node name="trees19" parent="." instance=ExtResource("7_0m25r")]
 position = Vector2(-280, -231)
+
+[node name="Node2D2" parent="." instance=ExtResource("9_hils5")]
+position = Vector2(-101, 163)
+
+[node name="Node2D3" parent="." instance=ExtResource("9_hils5")]
+position = Vector2(90, 163)
 
 [connection signal="timeout" from="NestTimer" to="." method="_on_nest_timer_timeout"]

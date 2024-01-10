@@ -3,20 +3,24 @@ extends Node2D
 var target = null
 var attackRange = 200
 var shooting_delay = 1.0  # Set the delay between shots
-var damage_per_shot = 10
+var damage_per_shot = 5
 
 var time_since_last_shot = 0.0
 
-func _process(delta):
+var can_shoot = true
+
+func _ready():
+	$Timer.start()
+	
+func _process(_delta):
 	if target:
 		rotate_towards_target(target.position)
-
 		# Implement shooting logic
-		time_since_last_shot += delta
-		if time_since_last_shot >= shooting_delay:
+		if can_shoot:
+			print("shot")
 			shoot()
-			time_since_last_shot = 0.0
-
+			
+	reset_target()
 	# Check for enemies in range and set as target
 	var enemies = get_tree().get_nodes_in_group("enemy_group")
 	for enemy in enemies:
@@ -31,16 +35,23 @@ func rotate_towards_target(target_position):
 
 func shoot():
 	# Implement damage logic
-	if target:
-		# Apply damage to the target
-		target.take_damage(damage_per_shot)
+	print("traff orm")
+	# Apply damage to the target
+	target.on_hit()
+	$Timer.start()
+	can_shoot = false
 
-		# Optionally, check if the target is destroyed and reset the target
-		if target.is_dead():
-			reset_target()
+	# Optionally, check if the target is destroyed and reset the target
+	if target.death_check():
+		reset_target()
 
 func set_target(new_target):
 	target = new_target
 
 func reset_target():
 	target = null
+
+
+func _on_timer_timeout():
+	print("timer timeout")
+	can_shoot = true
