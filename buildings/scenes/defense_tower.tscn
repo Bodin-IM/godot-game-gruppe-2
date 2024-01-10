@@ -21,6 +21,15 @@ shape = SubResource("RectangleShape2D_qcvv5")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("1_po13l")
 
+[node name="ProgressBar" type="ProgressBar" parent="Area2D/Sprite2D"]
+modulate = Color(0, 1, 0, 1)
+offset_left = -20.0
+offset_top = -29.0
+offset_right = 19.0
+offset_bottom = -25.0
+theme_override_font_sizes/font_size = 1
+show_percentage = false
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.337
 one_shot = true

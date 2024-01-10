@@ -328,9 +328,9 @@ position = Vector2(200, -236)
 position = Vector2(-280, -231)
 
 [node name="PreVerticalWall" parent="." instance=ExtResource("13_j2ykl")]
-position = Vector2(1128, 3.8147e-06)
+position = Vector2(1129, 0)
 
 [node name="PreHorizontalWall" parent="." instance=ExtResource("14_od7ai")]
-position = Vector2(1128, -0.75)
+position = Vector2(1129, 0)
 
 [connection signal="timeout" from="NestTimer" to="." method="_on_nest_timer_timeout"]
