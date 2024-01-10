@@ -9,7 +9,7 @@ var rng = RandomNumberGenerator.new()
 @onready var damage_taken = 1
 var current_frame = 0
 
-
+var hit_sfx = preload("res://audio/rockHit.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +24,7 @@ func on_hit():
 	print("hit")
 	
 	if (rock_lives > 0):
+		SfxPlayer.play_sound(hit_sfx, get_tree().current_scene)
 		var rock_upgrade = get_tree().get_nodes_in_group("rock_upgrader").size()
 		if rock_upgrade > 0:
 			damage_taken = 2
@@ -39,6 +40,7 @@ func update_animation():
 	
 func dead_rock():
 	if (animated_sprite_2d.frame < 5):
+		SfxPlayer.play_sound(hit_sfx, get_tree().current_scene)		
 		Resources.on_dead_rock(ressurser_stein)
 		animated_sprite_2d.frame=5
 		respawn_timer.start()

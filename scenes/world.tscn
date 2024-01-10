@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://cprlovjeanhk7" path="res://resources/scenes/rocks.tscn" id="8_x086s"]
 [ext_resource type="PackedScene" path="res://resources/scenes/ressurs_spawner.tscn" id="9_4f2y1"]
 [ext_resource type="PackedScene" uid="uid://cl5bbklandckr" path="res://buildings/scenes/defense_tower.tscn" id="9_hils5"]
-[ext_resource type="PackedScene" uid="uid://b21ma7iqq5eg5" path="res://buildings/scenes/ridder_krabber_hytte.tscn" id="10_8yoa2"]
 [ext_resource type="PackedScene" uid="uid://b3lyyacbxkmqx" path="res://defense/scenes/wall_left_right_pre.tscn" id="14_03fm3"]
 [ext_resource type="PackedScene" uid="uid://cdmdxxfx2gtja" path="res://defense/scenes/wall_up_down_pre.tscn" id="15_13ik0"]
 
@@ -87,59 +86,11 @@ stone_price = 15
 hp = 50
 what_build = ExtResource("9_hils5")
 
-[node name="BuildPlot10" parent="." instance=ExtResource("8_pgyg8")]
-position = Vector2(1240, -236)
-label = "Crab Knights"
-wood_price = 10
-stone_price = 20
-hp = 50
-what_build = ExtResource("10_8yoa2")
-
-[node name="BuildPlot11" parent="." instance=ExtResource("8_pgyg8")]
-position = Vector2(1144, -212)
-label = "Crab Knights"
-wood_price = 10
-stone_price = 20
-hp = 50
-what_build = ExtResource("10_8yoa2")
-
-[node name="BuildPlot12" parent="." instance=ExtResource("8_pgyg8")]
-position = Vector2(1333, -212)
-label = "Crab Knights"
-wood_price = 10
-stone_price = 20
-hp = 50
-what_build = ExtResource("10_8yoa2")
-
-[node name="BuildPlot7" parent="." instance=ExtResource("8_pgyg8")]
-position = Vector2(1240, 240)
-label = "Crab Knights"
-wood_price = 10
-stone_price = 20
-hp = 50
-what_build = ExtResource("10_8yoa2")
-
 [node name="trees" parent="." instance=ExtResource("7_0m25r")]
 position = Vector2(-64, 128)
 
 [node name="rocks" parent="." instance=ExtResource("8_x086s")]
 position = Vector2(40, 128)
-
-[node name="BuildPlot8" parent="." instance=ExtResource("8_pgyg8")]
-position = Vector2(1144, 216)
-label = "Crab Knights"
-wood_price = 10
-stone_price = 20
-hp = 50
-what_build = ExtResource("10_8yoa2")
-
-[node name="BuildPlot9" parent="." instance=ExtResource("8_pgyg8")]
-position = Vector2(1336, 216)
-label = "Crab Knights"
-wood_price = 10
-stone_price = 20
-hp = 50
-what_build = ExtResource("10_8yoa2")
 
 [node name="RessursSpawner" parent="." instance=ExtResource("9_4f2y1")]
 position = Vector2(-184, 280)

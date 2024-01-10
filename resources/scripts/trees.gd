@@ -12,6 +12,8 @@ var rng = RandomNumberGenerator.new()
 
 var dead = false
 
+var hit_sfx = preload("res://audio/treeHit.ogg")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -23,6 +25,7 @@ func _process(delta):
 	
 func on_hit():
 	if (dead == false):
+		SfxPlayer.play_sound(hit_sfx, get_tree().current_scene)
 		var wood_upgrade = get_tree().get_nodes_in_group("wood_upgrader").size()
 		if wood_upgrade > 0:
 			damage_taken = 2
