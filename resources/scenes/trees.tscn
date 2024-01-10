@@ -74,3 +74,9 @@ position = Vector2(18.5, -10.4683)
 scale = Vector2(0.75, 0.753174)
 sprite_frames = SubResource("SpriteFrames_twodv")
 animation = &"dead_tree_animation"
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

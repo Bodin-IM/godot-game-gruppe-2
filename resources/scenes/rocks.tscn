@@ -47,3 +47,9 @@ position = Vector2(7.5, -7)
 scale = Vector2(0.9375, 0.875)
 sprite_frames = SubResource("SpriteFrames_5pmuy")
 animation = &"new_animation"
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

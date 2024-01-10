@@ -2,6 +2,7 @@ extends Area2D
 
 var rng = RandomNumberGenerator.new()
 
+@onready var respawn_timer = $RespawnTimer
 @onready var animations = $AnimationPlayer
 @onready var stubbe = $Stubbe
 @onready var tre = $Tree
@@ -31,4 +32,11 @@ func dead_tree():
 	dead = true
 	stubbe.visible = true
 	tre.visible = false
-	
+	respawn_timer.start()
+
+
+func _on_respawn_timer_timeout():
+	var new_tree = load("res://resources/scenes/trees.tscn").instantiate()
+	new_tree.position = position
+	get_parent().add_child(new_tree)
+	queue_free()
